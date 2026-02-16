@@ -5,139 +5,192 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>F1 2019 Grand Prix League</title>
 
-  <!-- Fonte estilo esportivo -->
+  <!-- Fonte esportiva -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 
+  <!-- CSS GLOBAL -->
+  <link rel="stylesheet" href="css/style.css">
+
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Orbitron', sans-serif;
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Orbitron',sans-serif;
     }
 
-    body {
-      background: #0a0a0a;
-      color: white;
+    body{
+      background:#0a0a0a;
+      color:white;
+      overflow-x:hidden;
+    }
+
+    /* 🟥 FUNDO VÍDEO */
+    #bg-video{
+      position:fixed;
+      right:0;
+      bottom:0;
+      min-width:100%;
+      min-height:100%;
+      z-index:-1;
+      filter:brightness(0.35);
     }
 
     /* NAVBAR */
-    header {
-      background: #111;
-      padding: 15px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 2px solid red;
+    header{
+      background:#111;
+      padding:15px 40px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      border-bottom:2px solid red;
+      position:relative;
+      z-index:10;
     }
 
-    header h1 {
-      color: red;
-      font-size: 22px;
+    header h1{
+      color:red;
+      font-size:22px;
     }
 
-    nav a {
-      color: white;
-      margin-left: 20px;
-      text-decoration: none;
-      transition: 0.3s;
-      font-weight: 700;
+    nav a{
+      color:white;
+      margin-left:20px;
+      text-decoration:none;
+      transition:.3s;
+      font-weight:700;
     }
 
-    nav a:hover {
-      color: red;
+    nav a:hover{
+      color:red;
     }
 
     /* BANNER */
-    .banner {
-      height: 90vh;
-      background: url('https://images7.alphacoders.com/100/1003299.jpg') center/cover no-repeat;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      position: relative;
+    .banner{
+      height:90vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      position:relative;
     }
 
-    .banner::after {
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.65);
+    .banner::after{
+      content:"";
+      position:absolute;
+      width:100%;
+      height:100%;
+      background:rgba(0,0,0,.65);
     }
 
-    .banner-content {
-      position: relative;
-      z-index: 2;
+    .banner-content{
+      position:relative;
+      z-index:2;
     }
 
-    .banner h2 {
-      font-size: 55px;
-      color: red;
-      margin-bottom: 10px;
+    .banner h2{
+      font-size:55px;
+      color:red;
+      margin-bottom:10px;
     }
 
-    .banner p {
-      font-size: 20px;
-      margin-bottom: 25px;
+    .banner p{
+      font-size:20px;
+      margin-bottom:25px;
     }
 
-    .discord-btn {
-      padding: 15px 30px;
-      background: red;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 8px;
-      transition: 0.3s;
+    .discord-btn{
+      padding:15px 30px;
+      background:red;
+      color:white;
+      text-decoration:none;
+      font-weight:bold;
+      border-radius:8px;
+      transition:.3s;
     }
 
-    .discord-btn:hover {
-      background: #ff2a2a;
-      transform: scale(1.05);
+    .discord-btn:hover{
+      background:#ff2a2a;
+      transform:scale(1.05);
+    }
+
+    /* STATUS INSCRIÇÕES */
+    .signup-status{
+      margin-top:20px;
+      font-size:18px;
+      color:#ccc;
     }
 
     /* PRÓXIMA CORRIDA */
-    .next-race {
-      padding: 60px 20px;
-      text-align: center;
-      background: #111;
-      border-top: 2px solid red;
+    .next-race{
+      padding:60px 20px;
+      text-align:center;
+      background:#111;
+      border-top:2px solid red;
     }
 
-    .next-race h3 {
-      font-size: 32px;
-      color: red;
-      margin-bottom: 20px;
+    .next-race h3{
+      font-size:32px;
+      color:red;
+      margin-bottom:20px;
     }
 
-    .race-box {
-      background: #1a1a1a;
-      padding: 30px;
-      border-radius: 15px;
-      display: inline-block;
-      box-shadow: 0 0 20px rgba(255,0,0,0.4);
+    .race-box{
+      background:#1a1a1a;
+      padding:30px;
+      border-radius:15px;
+      display:inline-block;
+      box-shadow:0 0 20px rgba(255,0,0,.4);
     }
 
-    .race-box p {
-      font-size: 18px;
-      margin: 8px 0;
+    .race-box p{
+      font-size:18px;
+      margin:8px 0;
     }
 
-    /* FOOTER */
-    footer {
-      background: #050505;
-      padding: 20px;
-      text-align: center;
-      border-top: 2px solid red;
-      margin-top: 40px;
-      font-size: 14px;
-      color: #aaa;
+    /* LOADING GRID */
+    #loading-screen{
+      position:fixed;
+      width:100%;
+      height:100%;
+      background:#000;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#fff;
+      font-size:2em;
+      z-index:9999;
+      flex-direction:column;
+    }
+
+    footer{
+      background:#050505;
+      padding:20px;
+      text-align:center;
+      border-top:2px solid red;
+      margin-top:40px;
+      font-size:14px;
+      color:#aaa;
     }
   </style>
 </head>
 <body>
+
+  <!-- 🏁 LOADING SCREEN -->
+  <div id="loading-screen">
+    <h1>🏁 F1 2019 Grand Prix League</h1>
+    <p>Carregando Grid...</p>
+  </div>
+
+  <!-- 🟥 VÍDEO DE FUNDO -->
+  <video autoplay muted loop id="bg-video">
+    <source src="assets/f1-bg.mp4" type="video/mp4">
+  </video>
+
+  <!-- 🎵 MÚSICA TEMA -->
+  <audio autoplay loop>
+    <source src="assets/theme.mp3" type="audio/mp3">
+  </audio>
 
   <!-- NAVBAR -->
   <header>
@@ -159,8 +212,10 @@
       <h2>F1 2019 Grand Prix League</h2>
       <p>20 Drivers • One Champion • Eternal Glory</p>
 
-      <!-- TROCAR PELO LINK DO TEU DISCORD -->
       <a class="discord-btn" href="#" target="_blank">Entrar no Discord</a>
+
+      <!-- STATUS INSCRIÇÕES -->
+      <div class="signup-status" id="signupStatus"></div>
     </div>
   </section>
 
@@ -180,6 +235,25 @@
   <footer>
     © 2026 F1 2019 Grand Prix League — Todos os direitos reservados
   </footer>
+
+  <!-- JS SISTEMAS -->
+  <script src="js/ranking.js"></script>
+  <script src="js/upgrades-pack.js"></script>
+
+  <!-- 🧠 STATUS INSCRIÇÕES AUTO -->
+  <script>
+    const signups = JSON.parse(localStorage.getItem("f1Signups") || "[]");
+    const vagas = 20 - signups.length;
+
+    const el = document.getElementById("signupStatus");
+
+    if(signups.length >= 20){
+      el.innerHTML = "🏁 Grid Fechado — Temporada Lotada";
+      el.style.color = "#00ff88";
+    } else {
+      el.innerHTML = `📝 ${signups.length}/20 Pilotos Inscritos — ${vagas} vagas restantes`;
+    }
+  </script>
 
 </body>
 </html>
