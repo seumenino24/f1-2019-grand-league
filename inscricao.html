@@ -1,0 +1,109 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Inscrição de Pilotos</title>
+
+<style>
+body{
+  background:#0a0a0a;
+  color:white;
+  font-family:Arial;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+}
+
+.form-box{
+  background:#111;
+  padding:30px;
+  border-radius:15px;
+  width:300px;
+  box-shadow:0 0 20px rgba(255,0,0,.5);
+}
+
+h2{
+  color:red;
+  text-align:center;
+}
+
+input, select, button{
+  width:100%;
+  margin-top:10px;
+  padding:10px;
+  border:none;
+  border-radius:8px;
+}
+
+button{
+  background:red;
+  color:white;
+  font-weight:bold;
+  cursor:pointer;
+}
+</style>
+</head>
+<body>
+
+<div class="form-box">
+  <h2>Inscrição</h2>
+
+  <input id="nome" placeholder="Nome do Piloto">
+
+  <input id="numero" placeholder="Número">
+
+  <select id="equipe">
+    <option>Mercedes</option>
+    <option>Ferrari</option>
+    <option>Red Bull</option>
+    <option>McLaren</option>
+    <option>Renault</option>
+    <option>Alfa Romeo</option>
+    <option>Racing Point</option>
+    <option>Haas</option>
+    <option>Toro Rosso</option>
+    <option>Williams</option>
+  </select>
+
+  <button onclick="inscrever()">Confirmar Inscrição</button>
+</div>
+
+<script>
+function inscrever(){
+
+  const nome = document.getElementById("nome").value;
+  const numero = document.getElementById("numero").value;
+  const equipe = document.getElementById("equipe").value;
+
+  if(!nome || !numero){
+    alert("Preenche tudo ae pae");
+    return;
+  }
+
+  let signups = JSON.parse(localStorage.getItem("f1Signups") || "[]");
+
+  if(signups.length >= 20){
+    alert("Grid já tá lotado 🏁");
+    return;
+  }
+
+  signups.push({
+    nome,
+    numero,
+    equipe,
+    pontos:0,
+    elo:1000
+  });
+
+  localStorage.setItem("f1Signups", JSON.stringify(signups));
+
+  alert("Inscrição concluída 🔥");
+  window.location.href = "classificacao.html";
+}
+</script>
+
+</body>
+</html>
+```
