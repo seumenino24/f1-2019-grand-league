@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hall da Fama | F1 2019 Grand Prix League</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    body {
+      background: #0a0a0a;
+      color: white;
+    }
+
+    /* NAVBAR */
+    header {
+      background: #111;
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid red;
+    }
+
+    header h1 {
+      color: red;
+      font-size: 20px;
+    }
+
+    nav a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: red;
+    }
+
+    /* TÍTULO */
+    .title {
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .title h2 {
+      font-size: 42px;
+      color: red;
+    }
+
+    /* CAMPEÕES */
+    .champions {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      padding: 40px;
+    }
+
+    .champion-card {
+      background: #111;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(255,0,0,0.4);
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .champion-card:hover {
+      transform: scale(1.05);
+    }
+
+    .champion-card img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+    }
+
+    .champion-content {
+      padding: 20px;
+    }
+
+    .champion-content h3 {
+      color: #ffd000;
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .champion-content p {
+      font-size: 14px;
+      margin: 4px 0;
+      color: #ccc;
+    }
+
+    /* RECORDES */
+    .records {
+      padding: 40px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .records h3 {
+      color: red;
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 28px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #111;
+      box-shadow: 0 0 20px rgba(255,0,0,0.3);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    th, td {
+      padding: 14px;
+      text-align: center;
+    }
+
+    th {
+      background: red;
+    }
+
+    tr:nth-child(even) {
+      background: #1a1a1a;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #050505;
+      padding: 20px;
+      text-align: center;
+      border-top: 2px solid red;
+      margin-top: 40px;
+      font-size: 14px;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header>
+    <h1>F1 2019 Grand Prix League</h1>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="pilotos.html">Pilotos</a>
+      <a href="equipes.html">Equipes</a>
+      <a href="calendario.html">Calendário</a>
+      <a href="classificacao.html">Classificação</a>
+      <a href="hall-da-fama.html">Hall da Fama</a>
+    </nav>
+  </header>
+
+  <!-- TÍTULO -->
+  <section class="title">
+    <h2>Hall da Fama</h2>
+  </section>
+
+  <!-- CAMPEÕES -->
+  <section class="champions">
+
+    <div class="champion-card">
+      <img src="https://i.imgur.com/9QO5F9G.png" alt="Campeão">
+      <div class="champion-content">
+        <h3>Temporada 1 — Nome</h3>
+        <p>Equipe: Mercedes</p>
+        <p>Pontos: 000</p>
+        <p>Vitórias: 0</p>
+      </div>
+    </div>
+
+    <!-- DUPLICAR PRA CADA SEASON -->
+
+  </section>
+
+  <!-- RECORDES -->
+  <section class="records">
+    <h3>Recordes da Liga</h3>
+
+    <table>
+      <tr>
+        <th>Recorde</th>
+        <th>Piloto</th>
+        <th>Marca</th>
+      </tr>
+
+      <tr>
+        <td>Mais Vitórias</td>
+        <td>Nome</td>
+        <td>0</td>
+      </tr>
+
+      <tr>
+        <td>Mais Pódios</td>
+        <td>Nome</td>
+        <td>0</td>
+      </tr>
+
+      <tr>
+        <td>Mais Poles</td>
+        <td>Nome</td>
+        <td>0</td>
+      </tr>
+
+      <tr>
+        <td>Volta Mais Rápida</td>
+        <td>Nome</td>
+        <td>0:00.000</td>
+      </tr>
+
+    </table>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 F1 2019 Grand Prix League — Todos os direitos reservados
+  </footer>
+
+</body>
+</html>

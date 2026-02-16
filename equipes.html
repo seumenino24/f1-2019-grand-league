@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Equipes | F1 2019 Grand Prix League</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    body {
+      background: #0a0a0a;
+      color: white;
+    }
+
+    /* NAVBAR */
+    header {
+      background: #111;
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid red;
+    }
+
+    header h1 {
+      color: red;
+      font-size: 20px;
+    }
+
+    nav a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: red;
+    }
+
+    /* TÍTULO */
+    .title {
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .title h2 {
+      font-size: 40px;
+      color: red;
+    }
+
+    /* GRID EQUIPES */
+    .teams {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      padding: 40px;
+    }
+
+    .team-card {
+      background: #111;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 0 15px rgba(255,0,0,0.4);
+      transition: 0.3s;
+      text-align: center;
+    }
+
+    .team-card:hover {
+      transform: scale(1.05);
+    }
+
+    .team-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      background: #000;
+    }
+
+    .team-content {
+      padding: 20px;
+    }
+
+    .team-content h3 {
+      color: red;
+      margin-bottom: 10px;
+    }
+
+    .team-content p {
+      font-size: 14px;
+      margin: 4px 0;
+      color: #ccc;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #050505;
+      padding: 20px;
+      text-align: center;
+      border-top: 2px solid red;
+      margin-top: 40px;
+      font-size: 14px;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header>
+    <h1>F1 2019 Grand Prix League</h1>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="pilotos.html">Pilotos</a>
+      <a href="equipes.html">Equipes</a>
+      <a href="calendario.html">Calendário</a>
+      <a href="classificacao.html">Classificação</a>
+      <a href="hall-da-fama.html">Hall da Fama</a>
+    </nav>
+  </header>
+
+  <!-- TÍTULO -->
+  <section class="title">
+    <h2>Equipes & Line‑up</h2>
+  </section>
+
+  <!-- EQUIPES -->
+  <section class="teams">
+
+    <!-- MERCEDES -->
+    <div class="team-card">
+      <img src="https://i.imgur.com/VK6KQ9D.png" alt="Mercedes">
+      <div class="team-content">
+        <h3>Mercedes AMG Petronas</h3>
+        <p>Piloto 1: Nome</p>
+        <p>Piloto 2: Nome</p>
+        <p>Pontos: 0</p>
+      </div>
+    </div>
+
+    <!-- FERRARI -->
+    <div class="team-card">
+      <img src="https://i.imgur.com/9mG3YcP.png" alt="Ferrari">
+      <div class="team-content">
+        <h3>Scuderia Ferrari</h3>
+        <p>Piloto 1: Nome</p>
+        <p>Piloto 2: Nome</p>
+        <p>Pontos: 0</p>
+      </div>
+    </div>
+
+    <!-- RED BULL -->
+    <div class="team-card">
+      <img src="https://i.imgur.com/3KXQK7G.png" alt="Red Bull">
+      <div class="team-content">
+        <h3>Aston Martin Red Bull Racing</h3>
+        <p>Piloto 1: Nome</p>
+        <p>Piloto 2: Nome</p>
+        <p>Pontos: 0</p>
+      </div>
+    </div>
+
+    <!-- DUPLICAR PARA AS 10 EQUIPES -->
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 F1 2019 Grand Prix League — Todos os direitos reservados
+  </footer>
+
+</body>
+</html>
